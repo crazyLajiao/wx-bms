@@ -8,6 +8,8 @@ const randomSchema = new mongoose.Schema({
     user_id: Number,
     user_avatar: String,
     user_name: String,
+    title: String,
+    content:String,
     star: {
         type: Number,
         default: 0

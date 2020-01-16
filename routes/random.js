@@ -29,69 +29,82 @@ router.get('/create',function(req,res,next){
     // },)
 })
 router.get('/find',function(req,res,next){
-    let skip = req.query.skip;
-    let limit = req.query.limit
-    if(skip){
-        if(limit){ 
-            randomModel.find().skip(Number(skip)).limit(Number(limit)).then((doc)=>{
-                if(doc.length){
-                    res.send({
-                        status: 1,
-                        data: doc
-                    })
-                }else{
-                    res.send({
-                        status: 0,
-                        message: '查询失败'
-                    })
-                }
+    let skip = req.query.skip || 0;
+    let limit = req.query.limit || 10; 
+    randomModel.find().skip(Number(skip)).limit(Number(limit)).then((doc)=>{
+        if(doc.length){
+            res.send({
+                status: 1,
+                data: doc
             })
         }else{
-            randomModel.find().skip(Number(skip)).then((doc)=>{
-                if(doc.length){
-                    res.send({
-                        status: 1,
-                        data: doc
-                    })
-                }else{
-                    res.send({
-                        status: 0,
-                        message: '查询失败'
-                    })
-                }
+            res.send({
+                status: 0,
+                message: '查询失败'
             })
         }
-    }else{
-        if(limit){ 
-            randomModel.find().limit(Number(limit)).then((doc)=>{
-                if(doc.length){
-                    res.send({
-                        status: 1,
-                        data: doc
-                    })
-                }else{
-                    res.send({
-                        status: 0,
-                        message: '查询失败'
-                    })
-                }
-            })
-        }else{
-            randomModel.find().then((doc)=>{
-                if(doc.length){
-                    res.send({
-                        status: 1,
-                        data: doc
-                    })
-                }else{
-                    res.send({
-                        status: 0,
-                        message: '查询失败'
-                    })
-                }
-            })
-        }
-    }
+    })
+    // if(skip){
+    //     if(limit){ 
+    //         randomModel.find().skip(Number(skip)).limit(Number(limit)).then((doc)=>{
+    //             if(doc.length){
+    //                 res.send({
+    //                     status: 1,
+    //                     data: doc
+    //                 })
+    //             }else{
+    //                 res.send({
+    //                     status: 0,
+    //                     message: '查询失败'
+    //                 })
+    //             }
+    //         })
+    //     }else{
+    //         randomModel.find().skip(Number(skip)).then((doc)=>{
+    //             if(doc.length){
+    //                 res.send({
+    //                     status: 1,
+    //                     data: doc
+    //                 })
+    //             }else{
+    //                 res.send({
+    //                     status: 0,
+    //                     message: '查询失败'
+    //                 })
+    //             }
+    //         })
+    //     }
+    // }else{
+    //     if(limit){ 
+    //         randomModel.find().limit(Number(limit)).then((doc)=>{
+    //             if(doc.length){
+    //                 res.send({
+    //                     status: 1,
+    //                     data: doc
+    //                 })
+    //             }else{
+    //                 res.send({
+    //                     status: 0,
+    //                     message: '查询失败'
+    //                 })
+    //             }
+    //         })
+    //     }else{
+    //         randomModel.find().then((doc)=>{
+    //             if(doc.length){
+    //                 res.send({
+    //                     status: 1,
+    //                     data: doc
+    //                 })
+    //             }else{
+    //                 res.send({
+    //                     status: 0,
+    //                     message: '查询失败'
+    //                 })
+    //             }
+    //         })
+    //     }
+    // }
     
 })
 

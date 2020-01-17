@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 const connection = require('../mongdb/db.js')
 
+const commentSchema = new mongoose.Schema({
+    user_name: String,
+    content: String,
+})
 const randomSchema = new mongoose.Schema({
     id: Number,
     article_id: Number,
@@ -17,7 +21,8 @@ const randomSchema = new mongoose.Schema({
     comments: {
         type: Number,
         default: 0
-    }
+    },
+    comment_content: [commentSchema]
 })
 const random = connection.model('random',randomSchema)
 

@@ -22,7 +22,9 @@ const randomSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    comment_content: [commentSchema]
+    comment_content: [{
+        ref:commentSchema
+    }],
 })
 const random = connection.model('random',randomSchema)
 

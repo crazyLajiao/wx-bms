@@ -12,31 +12,24 @@ module.exports = [  //还是只能module.exports导出
         comments: 30,
         comments_content:[
             {
-                id: 112,
                 user_name: '游客cmm',
                 content: '谢谢楼主科普，太有用了~~~~'
             },{
-                id: 113,
                 user_name: '游客cmm',
                 content: '谢谢楼主科普，太有用了~~~~'
             },{
-                id: 114,
                 user_name: '游客cmm',
                 content: '谢谢楼主科普，太有用了~~~~'
             },{
-                id: 115,
                 user_name: '游客cmm',
                 content: '谢谢楼主科普，太有用了~~~~'
             },{
-                id: 116,
                 user_name: '游客cmm',
                 content: '谢谢楼主科普，太有用了~~~~'
             },{
-                id: 117,
                 user_name: '游客cmm',
                 content: '谢谢楼主科普，太有用了~~~~'
             },{
-                id: 118,
                 user_name: '游客cmm',
                 content: '谢谢楼主科普，太有用了~~~~'
             },
